@@ -1,0 +1,33 @@
+
+name: CICD
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./beekeeping
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - run: npm ci
+      working-directory: ${{env.working-directory}}
+    - run: npm run build-ci
+      working-directory: ${{env.working-directory}}    
+    - name: Deploy to Server
+      uses: easingthemes/ssh-deploy@v2.1.1
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.BANANA_STAND_KEY }}
+        ARGS: " -v -rltgoDzvO --delete"
+        SOURCE: "beekeeping/dist/beekeeping/"
+        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+        REMOTE_USER: ${{ secrets.REMOTE_USER }}
+        TARGET: ${{ secrets.REMOTE_TARGET }}
