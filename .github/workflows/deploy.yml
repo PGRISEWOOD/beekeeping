@@ -10,7 +10,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      working-directory: ./beekeeping
+      working-directory: ./tradelist
 
     steps:
     - uses: actions/checkout@v2
@@ -27,7 +27,7 @@ jobs:
       env:
         SSH_PRIVATE_KEY: ${{ secrets.BANANA_STAND_KEY }}
         ARGS: " -v -rltgoDzvO --delete"
-        SOURCE: "beekeeping/dist/beekeeping/"
+        SOURCE: "tradelist/dist/tradelist/"
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
         TARGET: ${{ secrets.REMOTE_TARGET }}

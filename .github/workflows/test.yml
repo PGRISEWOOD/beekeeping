@@ -13,7 +13,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      working-directory: ./beekeeping
+      working-directory: ./tradelist
 
     strategy:
       matrix:

@@ -1,2 +1,2 @@
-# beekeeping
-Angular app for preliminary beekeeping course
+# tradelist
+Angular app for preliminary tradelist course

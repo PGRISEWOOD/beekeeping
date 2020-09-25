@@ -19,13 +19,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "bee",
+      "tl",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "bee",
+      "tl",
       "kebab-case"
     ],
     "eofline": true,
