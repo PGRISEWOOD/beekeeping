@@ -71,7 +71,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "tradelist:build:production"
+              "browserTarget": "tradelist:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             }
           }
         },
