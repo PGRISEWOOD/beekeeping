@@ -1,11 +1,11 @@
 {
-  "name": "beekeeping",
+  "name": "tradelist",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-ci": "ng build --prod=true --deployUrl=/beekeeping/ --baseHref=/beekeeping/",
+    "build-ci": "ng build --prod=true --deployUrl=/tradelist/ --baseHref=/tradelist/",
     "test": "ng test",
     "test-ci": "ng test --watch=false",
     "lint": "ng lint",
