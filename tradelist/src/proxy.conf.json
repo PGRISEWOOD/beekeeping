@@ -1,0 +1,11 @@
+{
+    "/gs/*": {
+        "target": "https://www.gamestop.ie",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/gs*": ""
+        }
+    }
+}
