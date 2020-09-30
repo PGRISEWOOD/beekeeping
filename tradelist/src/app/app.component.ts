@@ -15,12 +15,14 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.tradelistService.getTradelist().subscribe(
       (response)  => {
-        const start = response.indexOf("<tbody>");
-        const end = response.indexOf("</tbody>");
-
-        this.content = response.substring(start,end+8)
+        const start = response.data.indexOf("<tbody>");
+        const end = response.data.indexOf("</tbody>");
+        this.content = response.data.substring(start,end+8);
       },
-      err => this.content = err
+      err => {
+        this.content = "error loading trade list";
+        alert(JSON.stringify(err));
+      }
     )
   }
 

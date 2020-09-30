@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build  --deployUrl=/tradelist/ --baseHref=/tradelist/",
     "build-ci": "ng build --prod=true --deployUrl=/tradelist/ --baseHref=/tradelist/",
     "test": "ng test",
     "test-ci": "ng test --watch=false",

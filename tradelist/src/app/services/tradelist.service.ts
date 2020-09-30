@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,14 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class TradelistService {
 
-  constructor(private httpClient: HttpClient) { }
+      constructor(private httpClient: HttpClient) { }
 
-  getTradelist(): Observable<string>{
-    const headers = new HttpHeaders({
-        Accept:'text/html',
-      });
-    let response = this.httpClient.get("/gs/trade-list", {headers: headers,responseType: "text"});
-    return response;
+    getTradelist(): Observable<any>{
+        let response = this.httpClient.get("gs/trade-list");
+        return response;
     }
 
 }
